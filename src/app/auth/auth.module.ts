@@ -4,11 +4,12 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RegisterComponent } from './register/register.component';
 import { RouterModule, Routes  } from '@angular/router';
 import { LoginComponent } from './login/login.component';
+import { IsLoggedIn } from '../services/isLoggedIn.service';
 
 const routes: Routes = [
   {path: '', redirectTo: 'register', pathMatch: 'full'},
-  { path: 'login', component: LoginComponent },
-  { path: 'register', component: RegisterComponent }
+  { path: 'login', component: LoginComponent, resolve: [IsLoggedIn] },
+  { path: 'register', component: RegisterComponent, resolve: [IsLoggedIn] }
 ]
 
 @NgModule({

@@ -8,9 +8,10 @@ import { SharedModule } from '../shared/shared.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BookCardComponent } from './book-card/book-card.component';
 import { MyBooksComponent } from './my-books/my-books.component';
+import { AuthGuard } from '../services/authGuard.service';
 
 const routes: Routes = [
-  { path: '', component: BooksComponent, 
+  { path: '', component: BooksComponent, resolve: [ AuthGuard ],
     children: [
       {path: 'info', component: BookInfoComponent},
       {path: 'add', component: AddBookComponent},
