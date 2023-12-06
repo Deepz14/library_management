@@ -1,0 +1,9 @@
+<nav class="border border-b-gray-300 border-t-0 border-l-0 border-r-0 flex justify-between flex-wrap px-2 py-3 shadow w-full h-12">
+    <a [routerLink]="['/']" class="text-lg ml-2 cursor-pointer">Library Management</a>
+    <ul class="flex items-center flex-wrap">
+        <li class="text-blue-600 cursor-pointer hover:underline mr-3 text-lg"><a *ngIf="isAdminUser" [routerLink]="['/bookList/add']">Add Book</a></li>
+        <li class="text-blue-600 cursor-pointer hover:underline mr-5 text-lg"><a *ngIf="!isAdminUser" [routerLink]="['/bookList/borrowed']">My Books</a></li>
+        <li class="text-blue-600 cursor-pointer hover:underline mr-5 text-lg"><a [routerLink]="['/userProfile', userInfo?.id]">{{userInfo?.name | titlecase}}</a></li>
+        <li class="text-red-600 cursor-pointer hover:underline mr-3 text-lg"><span (click)="logoutHandler()">Logout</span></li>
+    </ul>
+</nav>

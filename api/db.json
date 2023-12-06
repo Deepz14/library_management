@@ -1,0 +1,120 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Deepak",
+      "email": "deepak@demo.com",
+      "password": "test1234",
+      "role": "admin",
+      "limit": "max"
+    },
+    {
+      "name": "D1",
+      "email": "d1@demo.com",
+      "password": "test@1234",
+      "role": "user",
+      "limit": 5,
+      "id": 2,
+      "mobile_no": "1234568787"
+    },
+    {
+      "name": "D2",
+      "email": "d2@demo.com",
+      "password": "test@1234",
+      "role": "admin",
+      "limit": "max",
+      "id": 3,
+      "mobile_no": "123454"
+    },
+    {
+      "name": "naruto uzumaki",
+      "email": "naruto@demo.com",
+      "password": "test@1234",
+      "mobile_no": "12345678",
+      "id": 4,
+      "role": "user",
+      "limit": 5
+    }
+  ],
+  "books": [
+    {
+      "id": 1,
+      "title": "book1",
+      "author": "D1",
+      "published_date": "03-11-2020",
+      "in_stock": 6,
+      "status": "available",
+      "borrowed_by": [],
+      "returned_by": []
+    },
+    {
+      "title": "book2",
+      "author": "A7222",
+      "published_date": "2000-03-12",
+      "in_stock": "10",
+      "borrowed_by": [
+        {
+          "id": 1,
+          "name": "Deepz",
+          "email": "deepz@demo.com"
+        }
+      ],
+      "returned_by": [
+        {
+          "name": "naruto",
+          "email": "naruto@demo.com",
+          "password": "test@1234",
+          "role": "user",
+          "limit": 5,
+          "id": 4
+        },
+        {
+          "name": "naruto uzumaki",
+          "email": "naruto@demo.com",
+          "password": "test@1234",
+          "mobile_no": "",
+          "id": 4,
+          "role": "user",
+          "limit": 5
+        }
+      ],
+      "id": 2
+    },
+    {
+      "title": "Book 3",
+      "author": "James Cameron",
+      "published_date": "2008-05-14",
+      "in_stock": 6,
+      "id": 3,
+      "borrowed_by": [
+        {
+          "name": "naruto",
+          "email": "naruto@demo.com",
+          "password": "test@1234",
+          "role": "user",
+          "limit": 5,
+          "id": 4
+        }
+      ],
+      "returned_by": []
+    },
+    {
+      "title": "Book 4",
+      "author": "Test",
+      "published_date": "2004-05-02",
+      "in_stock": 4,
+      "borrowed_by": [
+        {
+          "name": "naruto",
+          "email": "naruto@demo.com",
+          "password": "test@1234",
+          "role": "user",
+          "limit": 5,
+          "id": 4
+        }
+      ],
+      "returned_by": [],
+      "id": 4
+    }
+  ]
+}

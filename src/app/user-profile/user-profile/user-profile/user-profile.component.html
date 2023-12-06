@@ -1,0 +1,23 @@
+<app-navbar></app-navbar>
+<div class="flex justify-center items-center mt-5 pt-2">
+    <div class="border border-gray-300 md:w-1/3 w-full p-3">
+        <h1 class="font-bold text-lg">Profile</h1>
+        <div class="my-3">
+            <form [formGroup]="userProfileForm" (ngSubmit)="updateUserProfile()">
+                <div class="pb-1">
+                    <input class="border border-gray-300 mb-3 p-2 rounded w-full" formControlName="name" type="text" placeholder="Enter name" />
+                </div>
+                <div class="pb-1">
+                    <input class="border border-gray-300 mb-3 p-2 rounded w-full" formControlName="email" type="email" placeholder="Enter email" />
+                </div>
+                <div class="pb-1">
+                    <input class="border border-gray-300 mb-3 p-2 rounded w-full" formControlName="mobile_no" type="text" placeholder="Enter mobile no" />
+                </div>
+                <div class="pb-1">
+                    <button class="bg-blue-600 text-white mb-3 p-2 rounded w-full" type="submit">Update Profile</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
