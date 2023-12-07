@@ -10,7 +10,7 @@
                     <input class="border border-gray-300 mb-3 p-2 rounded w-full" type="text" formControlName="author" placeholder="Author name" />
                 </div>
                 <div class="pb-1">
-                    <input class="border border-gray-300 mb-3 p-2 rounded w-full" type="date" formControlName="published_date" placeholder="Published date" />
+                    <input class="border border-gray-300 mb-3 p-2 rounded w-full" type="date" [value]="this.bookForm.controls.published_date.value | date:'yyyy-MM-dd'" formControlName="published_date" placeholder="Published date" />
                 </div>
                 <div class="pb-1">
                     <input class="border border-gray-300 mb-3 p-2 rounded w-full" type="text" formControlName="in_stock" placeholder="Available Stock" />
