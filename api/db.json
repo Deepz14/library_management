@@ -34,6 +34,23 @@
       "id": 4,
       "role": "user",
       "limit": 5
+    },
+    {
+      "name": "Admin",
+      "email": "admin@demo.com",
+      "password": "test@1234",
+      "role": "admin",
+      "limit": "max",
+      "id": 5
+    },
+    {
+      "name": "A1",
+      "email": "a1@demo.com",
+      "password": "test@1234",
+      "role": "admin",
+      "limit": "max",
+      "id": 6,
+      "mobile_no": ""
     }
   ],
   "books": [
@@ -42,9 +59,19 @@
       "title": "book1",
       "author": "D1",
       "published_date": "03-11-2020",
-      "in_stock": 6,
+      "in_stock": 0,
       "status": "available",
-      "borrowed_by": [],
+      "borrowed_by": [
+        {
+          "name": "D1",
+          "email": "d1@demo.com",
+          "password": "test@1234",
+          "role": "user",
+          "limit": 5,
+          "id": 2,
+          "mobile_no": "1234568787"
+        }
+      ],
       "returned_by": []
     },
     {

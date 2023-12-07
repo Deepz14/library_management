@@ -3,6 +3,7 @@ import { FormGroup, FormControl } from "@angular/forms";
 import { BookService } from "../../services/book.service";
 import { ActivatedRoute, Router } from "@angular/router";
 import { NotificationService } from 'src/app/utils/notification.service';
+import { Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-add-book',
@@ -14,10 +15,10 @@ export class AddBookComponent implements OnInit {
   formType: string = 'Add';
   bookId: number | any = '';
   bookForm = new FormGroup({
-    title: new FormControl(),
-    author: new FormControl(),
-    published_date: new FormControl(),
-    in_stock: new FormControl(),
+    title: new FormControl('', [Validators.required]),
+    author: new FormControl('', [Validators.required]),
+    published_date: new FormControl('', [Validators.required]),
+    in_stock: new FormControl(1, [Validators.required]),
     borrowed_by: new FormControl(),
     returned_by: new FormControl()
   });
@@ -45,6 +46,10 @@ export class AddBookComponent implements OnInit {
   }
 
   addBook() {
+    if(this.bookForm?.invalid){
+      this.notification.showErrorPrompt('Please fill all the fields');
+      return;
+    }
     this.bookService.addBook(this.bookForm.getRawValue()).subscribe(res => {
       if(res){
         this.notification.showSuccessPrompt('Book added successfully');
@@ -56,6 +61,10 @@ export class AddBookComponent implements OnInit {
   }
 
   editBook() {
+    if(this.bookForm?.invalid){
+      this.notification.showErrorPrompt('Please fill all the fields');
+      return;
+    }
     this.bookService.editBook(this.bookForm.getRawValue(), this.bookId).subscribe(res => {
       if(res){
         this.notification.showSuccessPrompt('Book updated successfully');

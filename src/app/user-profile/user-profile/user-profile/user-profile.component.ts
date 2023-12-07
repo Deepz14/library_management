@@ -1,5 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { AuthService } from 'src/app/services/auth.service';
@@ -15,8 +15,8 @@ export class UserProfileComponent implements OnInit, OnDestroy {
   userId: number | any;
   routerSubs: Subscription = new Subscription();
   userProfileForm = new FormGroup({
-    name: new FormControl(),
-    email: new FormControl(),
+    name: new FormControl('', [Validators.required]),
+    email: new FormControl('', [Validators.required]),
     mobile_no: new FormControl()
   })
   constructor(private activateRouter: ActivatedRoute, private router: Router,
@@ -46,6 +46,10 @@ export class UserProfileComponent implements OnInit, OnDestroy {
   }
 
   updateUserProfile(){
+    if(this.userProfileForm?.invalid){
+      this.notification.showErrorPrompt('Please fill all the fields');
+      return;
+    }
     this.authService.updateUser(this.userProfileForm.getRawValue(), this.userId).subscribe((res: any) => {
       if(res){
         this.notification.showSuccessPrompt('User profile updated successfully');
