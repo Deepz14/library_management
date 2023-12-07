@@ -64,8 +64,14 @@ export class BookCardComponent implements OnInit {
     });
   }
 
-  showBorrowedList() {
-    this.notification.showList();
+  showTransactionList(type) {
+    const newArr = type === 'Borrowed By' ? this.bookInfo.borrowed_by?.map((user) => user.name)
+    : this.bookInfo.returned_by?.map((user) => user.name);
+    if(newArr.length === 0) {
+      this.notification.showInfoPrompt('No transaction found.');
+      return;
+    }
+    this.notification.showList(type, newArr);
   }
 
 }

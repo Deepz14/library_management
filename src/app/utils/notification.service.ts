@@ -33,10 +33,23 @@ export class NotificationService {
         });
     }
 
-    showList(){
-        const d = ["deepz", "naweewe", "sefsdfsdf", "sdfsfsfs", "sfsdfsdfsdfsdf"]
-        const swal_html = `<div>${d.forEach(n => `<div>${n}<div>`)}</div>`
-        Swal.fire({title:"Good Job!", html: swal_html});
+    showInfoPrompt(message: string) {
+        Swal.fire({
+            icon: "info",
+            title: message,
+            showConfirmButton: true,
+        });
+    }
+
+    showList(type, d){
+        Swal.fire({
+            title: type,
+            html: "<div id='save-popup-message'></div>",
+            confirmButtonText: "Ok",
+         });
+        let popupTextElement = document.getElementById("save-popup-message");
+        d.forEach(val => popupTextElement.innerHTML = popupTextElement.innerHTML + "<h1 class='name-display'>" + val + "</h1>");
+        
     }
   
 }

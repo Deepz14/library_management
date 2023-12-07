@@ -30,7 +30,7 @@
       "name": "naruto uzumaki",
       "email": "naruto@demo.com",
       "password": "test@1234",
-      "mobile_no": "12345678",
+      "mobile_no": "1234567867",
       "id": 4,
       "role": "user",
       "limit": 5
@@ -111,19 +111,20 @@
       "title": "Book 3",
       "author": "James Cameron",
       "published_date": "2008-05-14",
-      "in_stock": 6,
+      "in_stock": 7,
       "id": 3,
-      "borrowed_by": [
+      "borrowed_by": [],
+      "returned_by": [
         {
-          "name": "naruto",
+          "name": "naruto uzumaki",
           "email": "naruto@demo.com",
           "password": "test@1234",
+          "mobile_no": "12345678",
+          "id": 4,
           "role": "user",
-          "limit": 5,
-          "id": 4
+          "limit": 5
         }
-      ],
-      "returned_by": []
+      ]
     },
     {
       "title": "Book 4",

@@ -11,7 +11,7 @@
                     <input class="border border-gray-300 mb-3 p-2 rounded w-full" formControlName="email" type="email" placeholder="Enter email" />
                 </div>
                 <div class="pb-1">
-                    <input class="border border-gray-300 mb-3 p-2 rounded w-full" formControlName="mobile_no" type="text" placeholder="Enter mobile no" />
+                    <input class="border border-gray-300 mb-3 p-2 rounded w-full" formControlName="mobile_no" [maxlength]="10" (keypress)="allowOnlyNumber($event)" type="text" placeholder="Enter mobile no" />
                 </div>
                 <div class="pb-1">
                     <button class="bg-blue-600 text-white mb-3 p-2 rounded w-full" type="submit">Update Profile</button>
