@@ -53,6 +53,10 @@ export class BookCardComponent implements OnInit {
     let payload = this.bookInfo;
     payload.in_stock -= this.currentQuanity;
     payload.borrowed_by = [...payload.borrowed_by, userInfo];
+    if(this.currentQuanity > userLimit) {
+      this.notification.showWarningPrompt('You have borrowed ' + this.currentQuanity + ' books. You can borrow maximum ' + userLimit + ' books.');
+      return;
+    }
     //this.notification.showWarningPrompt('You have borrowed ' + this.currentQuanity + ' books. You can borrow maximum ' + userLimit + ' books.');
     this.bookService.borrowBook(payload, this.bookId).subscribe(res => {
       if(res) {
